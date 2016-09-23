@@ -1,0 +1,67 @@
+<Alloy>
+    <Model src="ePostPorto" id="porto" instance="true"></Model>
+    <Collection src="ePostPorto" id="portoCollection" instance="true"></Collection>
+    <Window class="container" >
+        <View class="content" layout="vertical">
+            <Label text="Portokosten" />
+            <ListView defaultItemTemplate="baseTemplate" class="listView" id="listView" >
+                <Templates>
+                    <ItemTemplate name="baseTemplate" class="baseTemplate">
+                        <View class="listItemView"  layout="horizontal">
+                                <View class="wrapper">
+                            <Label class="position" bindId="product" />
+                            </View>
+                            <View class="wrapper">
+                            <Label class="position" bindId="grossAmount" />
+                            </View>
+                            <View class="wrapper">
+                            <Label class="position" bindId="currency" />
+                            </View>
+                        </View>
+                    </ItemTemplate>
+                </Templates>
+                <ListSection dataCollection="$.portoCollection">
+                    <ListItem class=""
+                    product:text="{product}"
+                    grossAmount:text="{['gross-amount']}"
+                    currency:text="{currency}"
+                    />
+                </ListSection>
+            </ListView>
+            <Label text="" />
+            
+             <View class="listItemView" layout="horizontal">
+                                <View class="wrapper">
+                            <Label class="position" text="{$.porto.product.product}" />
+                            </View>
+                            <View class="wrapper">
+                            <Label class="position" text="{$.porto.product.grossAmount}" />
+                            </View>
+                            <View class="wrapper">
+                            <Label class="position" text="{$.porto.product.currency}" />
+                            </View>
+                        </View>
+            
+            <View class="listItemView" layout="horizontal">
+                                <View class="wrapper">
+                            <Label class="position" text="Gesamtpreis" />
+                            </View>
+                            <View class="wrapper">
+                            <Label class="position" text="{$.porto.totalPrice.grossAmount}" />
+                            </View>
+                            <View class="wrapper">
+                            <Label class="position" text="{$.porto.totalPrice.currency}" />
+                            </View>
+                        </View>
+            
+            <View class="actionButtonBar" layout="horizontal">
+                  <View class="wrapper">
+                <Button id="EPostSendCancelButton" onClick="doCancelDocumentEPost" title="abbrechen" class="" visible="true" />
+                </View>
+                  <View class="wrapper">
+                <Button id="EPostSendButton" onClick="doSendDocumentEPost" title="E-POST jetzt senden" class="EPostButton" visible="false" />
+                </View>
+            </View>
+        </View>
+    </Window>
+</Alloy>

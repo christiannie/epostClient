@@ -1,0 +1,30 @@
+
+".content" : {
+	backgroundColor: "#fff",
+	opacity: 1,
+}
+"Window" : {
+	backgroundColor: "#fff",
+	/*opacity: 0.4,*/
+	height: Ti.UI.SIZE,
+	width: Ti.UI.SIZE
+}
+".listView": {
+	height: 200
+}
+
+".wrapper": {
+	height : Ti.UI.SIZE,
+	width  : Ti.UI.SIZE
+    }
+".position" : {
+	top    : 10,
+    	right  : 10,
+    	bottom : 10,
+    	left   : 10,
+}
+".listItemView":{
+	height: Ti.UI.SIZE,
+	width  : Ti.UI.SIZE
+}
+

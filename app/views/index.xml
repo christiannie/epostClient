@@ -1,0 +1,6 @@
+<Alloy>
+
+			<Window title="E-Post Beispiel">
+			    <Require id="EPost" src="EPostExampleCtrl" />
+			</Window>
+</Alloy>

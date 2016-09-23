@@ -1,0 +1,10 @@
+
+"View" : {
+	height: Ti.UI.SIZE,
+}
+"#errorMessages": {
+	height: Ti.UI.SIZE,
+	width: Ti.UI.SIZE,
+	color: "red"
+}
+
